@@ -109,7 +109,7 @@ C_KF = repmat(C_KF, 1, nh);
 % Kalman gain
 r = i_std^2;
 R_KF = r * I2;
-q = r * 100;
+q = r * x.q;
 Q_KF = q * eye(nH);
 [P_KF, KF, L_KF] = idare(Ad_KF.', C_KF.', Q_KF, R_KF);
 KF = KF.';
@@ -121,7 +121,7 @@ KF = KF.';
 % Reference tracking
 % For  and 
 % Weights
-lambda_i = 0; % Current
+lambda_i = x.lambda_i; % Current
 Wx = eye(nx);
 Wx(1, 1) = lambda_i / i_max^2;
 Wx(2, 2) = lambda_i / i_max^2;
@@ -143,7 +143,7 @@ Hx = 2 * (BB.') * Wx * BB;
 
 % Control effort
 % Weights
-lambda_u = 0;
+lambda_u = x.lambda_u;
 % Cost function
 
 % Finally,
