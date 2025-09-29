@@ -27,10 +27,10 @@ Lo = 2e-3;
 % Measurements
 % Current
 i_max = 50;             % Saturation
-i_std = 1e-10*0.01 * i_max / 3; % 1% White noise with 3-sigma rule
+i_std = 0.01 * i_max / 3; % 1% White noise with 3-sigma rule
 % Voltage
 v_max = 1000;            % Saturation
-v_std = 1e-10*0.01 * v_max / 3; % 1% White noise with 3-sigma rule
+v_std = 0.01 * v_max / 3; % 1% White noise with 3-sigma rule
 
 % System model
 % Equilibrium equations
